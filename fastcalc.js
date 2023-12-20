@@ -37,15 +37,6 @@ var fraveit //endanleg fráveitugjöld
 var fraferm //notað í millireikning - fráveitugjald sinnum fermetrar
 var sorp
 
-var inputField = document.querySelector('#input');
-
-inputField.onkeydown = function(event) {
-  // Only allow if the e.key value is a number or if it's 'Backspace'
-  if(isNaN(event.key) && event.key !== 'Backspace') {
-    event.preventDefault();
-  }
-}
-
 function numberWithCommas(x) {
 	// Setur punkta í tölur svo auðvelt sé að aðgreina þúsund
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -67,6 +58,8 @@ function calculate(){
     lawn = lawn.split('.').join("");
     square = square.split('.').join("");
     discount = discount.split('.').join("");
+
+    
    
     house = Number(house)
     lawn = Number(lawn)

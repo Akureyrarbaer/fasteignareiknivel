@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+<html lang="is">
 <head>
 <title>Reiknivél fasteignagjalda</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-win8.css">
-<script type = "text/javascript" scr="fastcalc.js"></script>
+<script type="text/javascript" src="fastcalc.js"></script>
+
 <style>
     .w3-theme {color:#fff !important; background-color:#005eb8 !important}
     .w3-orange-theme {color:#000 !important; background-color:#F0A30A !important}
@@ -53,8 +55,8 @@
         <input type="text" id="discount" name="discount" placeholder="Bara tölustafir"></input></p>
     </form>
   <input type="submit" class="w3-button w3-theme w3-margin w3-border w3-border-blue w3-round-large" id="myBtn" value="Reikna" onclick="calculate()">
-  <script src="fastcalc.js"></script>
   <script>
+  //til að enter virki
     document.getElementById("input")
         .addEventListener("keyup", function(event) {
         event.preventDefault();
@@ -66,5 +68,19 @@
   <input type="button"  class="w3-button w3-orange-theme w3-margin w3-round-large w3-border w3-border-orange" value="Endursetja formið" onClick="window.location.reload(true)">
   <div id="result_div" class="w3-container w3-padding-16 number"></div>
   <div id="result_div2" class="w3-container w3-padding-16 number"></div>
+
+  <script type="text/javascript">
+  //til að leyfa bara tölur og setja punkta inn
+var elems = document.querySelectorAll('input');
+elems.forEach(function(e) {
+    e.addEventListener("keyup", function(a){
+        var value = this.value;
+        value = value.replace(/[\D\s\._\-]+/g,'');
+        value = value ? parseInt(value, 10) : 0;
+        value = (value === 0) ? "" : value.toLocaleString("de-DE");
+        this.value = value;
+    });
+});
+</script>
 </body>
 </html>

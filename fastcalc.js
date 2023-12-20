@@ -120,10 +120,27 @@ function calculate(){
             if (discount !== 0 && fastskatt > discount) {
                 var fastskattmilli = fastskatt - discount
                 result = fastskattmilli+lodleig+vatn+fraveit+sorp
+                manud = Math.ceil(result/8)
                 fastskatt = fastskattmilli
+                fastskatt = numberWithCommas(fastskatt)
+                lodleig = numberWithCommas(lodleig)
+                fraveit = numberWithCommas(fraveit)
+                vatn = numberWithCommas(vatn)
+                sorp = numberWithCommas(sorp)
+                result = numberWithCommas(result)
+                manud = numberWithCommas(manud)
             } else if ((discount !== 0 && discount > fastskatt)){
-                fastskatt = 0     
+                console.log("halló!")
+                fastskatt = 0.0     
                 result = lodleig+vatn+fraveit+sorp
+                manud = Math.ceil(result/8)
+                fastskatt = numberWithCommas(fastskatt)
+                lodleig = numberWithCommas(lodleig)
+                fraveit = numberWithCommas(fraveit)
+                vatn = numberWithCommas(vatn)
+                sorp = numberWithCommas(sorp)
+                result = numberWithCommas(result)
+                manud = numberWithCommas(manud)
             } else{
             result = fastskatt+lodleig+vatn+fraveit+sorp
 			manud = Math.ceil(result/8)

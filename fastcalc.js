@@ -110,11 +110,11 @@ function calculate(){
 			lodleig = numberWithCommas(lodleig)
 			fraveit = numberWithCommas(fraveit)
 			vatn = numberWithCommas(vatn)
+            sorp = numberWithCommas(sorp)
 			result = numberWithCommas(result)
 			manud = numberWithCommas(manud)
             manud2 = numberWithCommas(manud2)
-			result_div.innerHTML = "<h3>Heildarkostnaður: "+result+" kr.</h3><br/><h4>Mánaðarleg greiðsla febrúar-september: "+manud+" kr.</h4></br><p><strong>Sundurliðun</strong></p><p>Miðað við þínar forsendur má reikna með að fasteignagjöldin séu eftirfarandi:</p><p>Fasteignaskattur: "+fastskatt+" kr.</p><p>Lóðarleiga: "+lodleig+" kr.</p><p>Fráveitugjald: "+fraveit+" kr.</p><p>Vatnsgjald: "+vatn+" kr.</p><p><strong>Samtals: "+result+" kr.</strong></p>"
-            result_div2.innerHTML = "<h4>ATH: Ef um íbúð í atvinnurekstri er að ræða bætist við sorphirðugjald: "+sorp+" kr.</h4><br/><h5>Mánaðarleg greiðsla febrúar-september verður þá samtals: "+manud2+" kr.</h5>"       
+			result_div.innerHTML = "<h3>Heildarkostnaður: "+result+" kr.</h3><br/><h4>Mánaðarleg greiðsla febrúar-september: "+manud+" kr.</br>ATH: Ef um íbúð í atvinnurekstri er að ræða bætist við <strong>sorphirðugjald:</strong> "+sorp+" kr.</br>Mánaðarleg greiðsla febrúar-september verður þá samtals: "+manud2+" kr.</h4></br><p><strong>Sundurliðun</strong></p><p>Miðað við þær forsendur sem þú settir inn má reikna með að fasteignagjöldin séu eftirfarandi:</p><p><strong>Fasteignaskattur:</strong> "+fastskatt+" kr.</p><p><strong>Lóðarleiga:</strong> "+lodleig+" kr.</p><p><strong>Fráveitugjald:</strong> "+fraveit+" kr.</p><p><strong>Vatnsgjald:</strong> "+vatn+" kr.</p><p><strong>Samtals: "+result+" kr.</strong></p>"    
         }else{
 			// Birtir niðurstöður fyrir íbúðarhúsnæði
             if (discount !== 0 && fastskatt > discount) {
@@ -152,8 +152,7 @@ function calculate(){
 			result = numberWithCommas(result)
 			manud = numberWithCommas(manud)
         } 
-            result_div.innerHTML = "<h3>Heildarkostnaður: "+result+" kr.</h3><br/><h4>Mánaðarleg greiðsla febrúar-september: "+manud+" kr.</h4></br><p><strong>Sundurliðun</strong></p><p>Miðað við þínar forsendur má reikna með að fasteignagjöldin séu eftirfarandi:</p><p>Fasteignaskattur: "+fastskatt+" kr.</p><p>Lóðarleiga: "+lodleig+" kr.</p><p>Fráveitugjald: "+fraveit+" kr.</p><p>Vatnsgjald: "+vatn+" kr.</p><p>Sorphirðugjald: "+sorp+" kr.</p><p><strong>Samtals: "+result+" kr.</strong></p>"
-            result_div2.innerHTML = "<h3 hidden>_</h3>"
+            result_div.innerHTML = "<h3>Heildarkostnaður: "+result+" kr.</h3><br/><h4>Mánaðarleg greiðsla febrúar-september: "+manud+" kr.</h4></br><p><strong>Sundurliðun</strong></p><p>Miðað við þær forsendur sem þú settir inn má reikna með að fasteignagjöldin séu eftirfarandi:</p><p><strong>Fasteignaskattur:</strong> "+fastskatt+" kr.</p><p><strong>Lóðarleiga:</strong> "+lodleig+" kr.</p><p><strong>Fráveitugjald:</strong> "+fraveit+" kr.</p><p><strong>Vatnsgjald:</strong> "+vatn+" kr.</p><p><strong>Sorphirðugjald:</strong> "+sorp+" kr.</p><p><strong>Samtals: "+result+" kr.</strong></p>"
             
         }
                 

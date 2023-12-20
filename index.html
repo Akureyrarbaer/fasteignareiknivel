@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+<title>Reiknivél fasteignagjalda</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-win8.css">
+<script type = "text/javascript" scr="fastcalc.js"></script>
+<style>
+    .w3-theme {color:#fff !important; background-color:#005eb8 !important}
+    .w3-orange-theme {color:#000 !important; background-color:#F0A30A !important}
+    
+    @media not all and (hover: hover) {
+        .w3-button:hover {color:#000 !important; background-color:#F0A30A !important}
+    }
+    h2 {
+      color: #005eb8;
+      font-weight: bold;
+    }
+    .w3-button.tablink {font-weight: bold;}
+  
+    img {
+      float: right;
+      max-height: 150px;
+      max-width: 150px;
+    }
+    @media screen and (max-width: 300px) {
+    img {
+      display: none;
+    }
+  }
+
+    </style>
+</head>
+<body>
+    <img src="Akureyri.png" alt="Merki Akureyrarbæjar">
+    <h2>Reiknivél fasteignagjalda hjá Akureyrarbæ</h2>
+    <p><strong> Fylltu út reitina hér fyrir neðan til að reikna út fasteignagjöldin þín</strong></p>
+    <p><a href="https://fasteignaskra.is/leit-i-fasteignaskra/" title="Hlekkur í fasteignamat á síðu HMS" target="_blank">Finna fasteignamat í fasteignaskrá</a></p>
+    <form id="input">
+      <label for="type">Veldu tegund húsnæðis:</label>
+        <select id="type" name="type">
+          <option value="ibud">Íbúðarhúsnæði</option>
+          <option value="atvi">Atvinnuhúsnæði</option>
+        </select><br>
+      <p><label for="house">Fasteignamat</label>
+        <input type="text" id="house" name="house" placeholder="Bara tölustafir" required></p>
+      <p><label for="lawn">Lóðarmat</label>
+        <input type="text" id="lawn" name="lawn" placeholder="Bara tölustafir" required></p>
+        <p><label for="square">Fermetrar</label>
+        <input type="text" id="square" name="square" placeholder="Bara tölustafir" required></input></p>
+        <p><label for="discount">Afsláttur vegna elli/örorku skv. álagningarseðli</label>
+        <input type="text" id="discount" name="discount" placeholder="Bara tölustafir"></input></p>
+    </form>
+  <input type="submit" class="w3-button w3-theme w3-margin w3-border w3-border-blue w3-round-large" id="myBtn" value="Reikna" onclick="calculate()">
+  <script src="fastcalc.js"></script>
+  <script>
+    document.getElementById("input")
+        .addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("myBtn").click();
+        }
+    });
+</script>
+  <input type="button"  class="w3-button w3-orange-theme w3-margin w3-round-large w3-border w3-border-orange" value="Endursetja formið" onClick="window.location.reload(true)">
+  <div id="result_div" class="w3-container w3-padding-16 number"></div>
+  <div id="result_div2" class="w3-container w3-padding-16 number"></div>
+</body>
+</html>

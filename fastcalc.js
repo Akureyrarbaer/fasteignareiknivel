@@ -114,7 +114,7 @@ function calculate(){
 			result = numberWithCommas(result)
 			manud = numberWithCommas(manud)
             manud2 = numberWithCommas(manud2)
-			result_div.innerHTML = "<h3>Heildarkostnaður: "+result+" kr.</h3><br/><h4>Mánaðarleg greiðsla febrúar-september: "+manud+" kr.</br>ATH: Ef um íbúð í atvinnurekstri er að ræða bætist við <strong>sorphirðugjald:</strong> "+sorp+" kr.</br>Mánaðarleg greiðsla febrúar-september verður þá samtals: "+manud2+" kr.</h4></br><p><strong>Sundurliðun</strong></p><p>Miðað við þær forsendur sem þú settir inn má reikna með að fasteignagjöldin séu eftirfarandi:</p><p><strong>Fasteignaskattur:</strong> "+fastskatt+" kr.</p><p><strong>Lóðarleiga:</strong> "+lodleig+" kr.</p><p><strong>Fráveitugjald:</strong> "+fraveit+" kr.</p><p><strong>Vatnsgjald:</strong> "+vatn+" kr.</p><p><strong>Samtals: "+result+" kr.</strong></p>"    
+			result_div.innerHTML = "<h3><strong>Sundurliðun</strong></h3><p>Miðað við þær forsendur sem þú settir inn má reikna með að fasteignagjöld ársins séu eftirfarandi:</p><p><strong>Fasteignaskattur:</strong> "+fastskatt+" kr.</p><p><strong>Lóðarleiga:</strong> "+lodleig+" kr.</p><p><strong>Fráveitugjald:</strong> "+fraveit+" kr.</p><p><strong>Vatnsgjald:</strong> "+vatn+" kr.</p><h3><strong>Samtals: "+result+" kr.</strong></h3><h4><strong>Mánaðarleg greiðsla febrúar-september: "+manud+" kr.</strong><br/>ATH: Ef um <strong>íbúð í atvinnurekstri</strong> er að ræða bætist við <strong>sorphirðugjald: "+sorp+" kr.</strong></br>Mánaðarleg greiðsla febrúar-september verður þá samtals:<strong> "+manud2+" kr.</strong></h4>"    
         }else{
 			// Birtir niðurstöður fyrir íbúðarhúsnæði
             if (discount !== 0 && fastskatt > discount) {
@@ -128,6 +128,7 @@ function calculate(){
                 vatn = numberWithCommas(vatn)
                 sorp = numberWithCommas(sorp)
                 result = numberWithCommas(result)
+                discount = numberWithCommas(discount)
                 manud = numberWithCommas(manud)
             } else if ((discount !== 0 && discount > fastskatt)){
                 console.log("halló!")
@@ -140,6 +141,7 @@ function calculate(){
                 vatn = numberWithCommas(vatn)
                 sorp = numberWithCommas(sorp)
                 result = numberWithCommas(result)
+                discount = numberWithCommas(discount)
                 manud = numberWithCommas(manud)
             } else{
             result = fastskatt+lodleig+vatn+fraveit+sorp
@@ -152,9 +154,7 @@ function calculate(){
 			result = numberWithCommas(result)
 			manud = numberWithCommas(manud)
         } 
-            result_div.innerHTML = "<h3>Heildarkostnaður: "+result+" kr.</h3><br/><h4>Mánaðarleg greiðsla febrúar-september: "+manud+" kr.</h4></br><p><strong>Sundurliðun</strong></p><p>Miðað við þær forsendur sem þú settir inn má reikna með að fasteignagjöldin séu eftirfarandi:</p><p><strong>Fasteignaskattur:</strong> "+fastskatt+" kr.</p><p><strong>Lóðarleiga:</strong> "+lodleig+" kr.</p><p><strong>Fráveitugjald:</strong> "+fraveit+" kr.</p><p><strong>Vatnsgjald:</strong> "+vatn+" kr.</p><p><strong>Sorphirðugjald:</strong> "+sorp+" kr.</p><p><strong>Samtals: "+result+" kr.</strong></p>"
-            
-        }
-                
+            result_div.innerHTML = "<h3><strong>Sundurliðun</strong></h3><p>Miðað við þær forsendur sem þú settir inn má reikna með að fasteignagjöld fyrir árið séu eftirfarandi:</p><p><strong>Fasteignaskattur:</strong> "+fastskatt+" kr.</p><p><strong>Lóðarleiga:</strong> "+lodleig+" kr.</p><p><strong>Fráveitugjald:</strong> "+fraveit+" kr.</p><p><strong>Vatnsgjald:</strong> "+vatn+" kr.</p><p><strong>Sorphirðugjald:</strong> "+sorp+" kr.</p><h3><strong>Samtals: "+result+" kr.</strong> Frádreginn afsláttur vegna elli/örorku: "+discount+" kr.</h3><h4><strong>Mánaðarleg greiðsla febrúar-september: "+manud+" kr.</strong></h4><p><em>Fasteignagjöld ársins eru innheimt í 8 greiðslum frá febrúar til september hvert ár.</em></p>"
+         }
     }
 }

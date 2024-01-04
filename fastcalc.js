@@ -49,11 +49,12 @@ function calculate(){
     result_div = document.getElementById("result_div")
     result_div2 = document.getElementById("result_div2")
     type = document.getElementById("type").value
-    console.log(type)
+    //console.log(type)
     house = document.getElementById("house").value
     lawn = document.getElementById("lawn").value
     square = document.getElementById("square").value
     discount = document.getElementById("discount").value
+    
 	house = house.split('.').join("");
     lawn = lawn.split('.').join("");
     square = square.split('.').join("");
@@ -65,27 +66,29 @@ function calculate(){
     lawn = Number(lawn)
     square = Number(square)
     discount = Number(discount)
-	house = house-lawn
     property = house+lawn
     fraferm = square * fraveitafermgjald
 
     result = 0
     sorp = 0
 
+    //console.log(house, lawn, square);
+
     if(house === 0 || lawn === 0 || square === 0 || type === ""){
 			// Passar að það sé fyllt í allt
         result_div.innerHTML = "<h3><strong>Vinsamlegast fylltu út alla reiti.</strong></h3>"
     }else{
         fraveit = fraferm + fraveita
+        
         if(type === "ibud"){
 			// Reiknað fyrir íbúðarhúsnæði og hesthús
-            fastskatt = property * fastskattibud
+            fastskatt = house * fastskattibud
             lodleig = lawn * lodleigaibud
             vatnferm = vatnibudferm * square
             vatn = vatnferm + vatnibudfast
         }else if(type === "atvi"){
 			// Reiknað fyrir atvinnu húsnæði
-            fastskatt = property * fastskattatvi
+            fastskatt = house * fastskattatvi
             lodleig = lawn * lodleigaatv
             vatnferm = vatnatvferm * square
             vatn = vatnferm + vatnatvfast    

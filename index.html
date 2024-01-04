@@ -83,6 +83,16 @@ elems.forEach(function(e) {
         this.value = value;
     });
 });
+var type = document.querySelector("#type");
+var discountP = document.querySelector("#discount").parentElement;
+type.addEventListener("change", function(a) {
+    if(this.value === "atvi") {
+        discountP.style.display = "none";
+    }
+    else {
+        discountP.style.display = "block";
+    }
+});
 </script>
 </body>
 </html>

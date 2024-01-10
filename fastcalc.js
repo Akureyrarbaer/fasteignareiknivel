@@ -57,7 +57,7 @@ function calculate(){
     
 	house = house.split('.').join("");
     lawn = lawn.split('.').join("");
-    square = square.split('.').join("");
+    square = square.split(',').join(".");
     discount = discount.split('.').join("");
 
     

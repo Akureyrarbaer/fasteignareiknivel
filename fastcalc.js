@@ -65,6 +65,7 @@ function calculate(){
     house = Number(house)
     lawn = Number(lawn)
     square = Number(square)
+    squareIsNaN = Number.isNaN(square); 
     discount = Number(discount)
     property = house+lawn
     fraferm = square * fraveitafermgjald
@@ -77,6 +78,9 @@ function calculate(){
     if(house === 0 || lawn === 0 || square === 0 || type === ""){
 			// Passar að það sé fyllt í allt
         result_div.innerHTML = "<h3><strong>Vinsamlegast fylltu út alla reiti.</strong></h3>"
+    }else if(squareIsNaN === true){
+        //tékkar að fermetrar séu örugglega tala en ekki strengur
+        result_div.innerHTML = "<h3><strong>Vinsamlegast settu bara tölustafi og kommur í fermetrareitinn.</strong></h3>"
     }else{
         fraveit = fraferm + fraveita
         

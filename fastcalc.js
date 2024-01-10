@@ -142,9 +142,12 @@ function calculate(){
                 result = numberWithCommas(result)
                 discount = numberWithCommas(discount)
                 manud = numberWithCommas(manud)
-            } else if ((discount !== 0 && discount > fastskatt)){
+            } else if (discount !== 0 && discount > fastskatt){
                 var fastskattmilli = fastskatt - discount
-                fastskatt = 0.0     
+                if(fastskattmilli < 0){
+                fastskattmilli = fastskatt
+                }
+                fastskatt = 0.0    
                 result = lodleig+vatn+fraveit+sorp
                 manud = Math.ceil(result/8)
                 fastskatt = numberWithCommas(fastskatt)

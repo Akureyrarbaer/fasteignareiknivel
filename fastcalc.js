@@ -15,6 +15,8 @@ const fraveitafermgjald = 321.65 //gjald á hvern fermetra
 
 const sorpgjald = 50628
 
+const discountmax = 127100 //hámarksafsláttur ársins
+
 
 // lýsa yfir global breytum 
 var house = 0 //fasteignamat
@@ -90,6 +92,9 @@ function calculate(){
             lodleig = lawn * lodleigaibud
             vatnferm = vatnibudferm * square
             vatn = vatnferm + vatnibudfast
+            if (discount > discountmax){
+                discount = discountmax
+            }
         }else if(type === "atvi"){
 			// Reiknað fyrir atvinnu húsnæði
             fastskatt = house * fastskattatvi
@@ -138,6 +143,7 @@ function calculate(){
                 discount = numberWithCommas(discount)
                 manud = numberWithCommas(manud)
             } else if ((discount !== 0 && discount > fastskatt)){
+                var fastskattmilli = fastskatt - discount
                 fastskatt = 0.0     
                 result = lodleig+vatn+fraveit+sorp
                 manud = Math.ceil(result/8)
@@ -147,7 +153,7 @@ function calculate(){
                 vatn = numberWithCommas(vatn)
                 sorp = numberWithCommas(sorp)
                 result = numberWithCommas(result)
-                discount = numberWithCommas(discount)
+                discount = numberWithCommas(fastskattmilli)
                 manud = numberWithCommas(manud)
             } else{
             result = fastskatt+lodleig+vatn+fraveit+sorp

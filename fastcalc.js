@@ -15,7 +15,7 @@ const fraveitafermgjald = 321.65 //gjald á hvern fermetra
 
 const sorpgjald = 50628
 
-const discountmax = 127100 //hámarksafsláttur ársins
+const discountmax = 142350 //hámarksafsláttur ársins
 
 
 // lýsa yfir global breytum 

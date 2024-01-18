@@ -13,7 +13,7 @@ const vatnatvferm = 179.4 //gjald á hvern fermetra
 const fraveita = 13613 //fast gjald í krónum án fermetra
 const fraveitafermgjald = 321.65 //gjald á hvern fermetra
 
-const sorpgjald = 50268
+const sorpgjald = 50268 //fast árlegt gjald
 
 const discountmax = 142350 //hámarksafsláttur ársins
 
@@ -24,7 +24,6 @@ var property //verður fasteignamat+lóðarmat
 var lawn = 0 //lóðarmat
 var square = 0 //fermetrar
 var result_div //til útprentunar á skjá - heildarniðurstöður
-//var result_div2 //til útprentunar á skjá - sér lína fyrir íbúðir í atvinnurekstri
 var result
 var result2 //til útprentunar fyrir íbúðir í atvinnurekstri
 var discount = 0 //afsláttur ef við á
@@ -51,7 +50,6 @@ function calculate(){
     result_div = document.getElementById("result_div")
     result_div2 = document.getElementById("result_div2")
     type = document.getElementById("type").value
-    //console.log(type)
     house = document.getElementById("house").value
     lawn = document.getElementById("lawn").value
     square = document.getElementById("square").value
@@ -73,9 +71,8 @@ function calculate(){
     fraferm = square * fraveitafermgjald
 
     result = 0
-    sorp = 0
+    sorp = Number(sorpgjald)
 
-    //console.log(house, lawn, square);
 
     if(house === 0 || lawn === 0 || square === 0 || type === ""){
 			// Passar að það sé fyllt í allt
@@ -109,7 +106,7 @@ function calculate(){
 		lodleig = Math.round(lodleig)
 		fraveit = Math.round(fraveit)
 		vatn = Math.round(vatn)
-		sorp = Math.round(sorpgjald)
+		sorp = Math.round(sorp)
         result = Math.round(result)
 
         if(type==="atvi"){

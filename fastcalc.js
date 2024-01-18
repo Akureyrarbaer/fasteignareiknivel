@@ -13,7 +13,7 @@ const vatnatvferm = 179.4 //gjald á hvern fermetra
 const fraveita = 13613 //fast gjald í krónum án fermetra
 const fraveitafermgjald = 321.65 //gjald á hvern fermetra
 
-const sorpgjald = 50628
+const sorpgjald = 50268
 
 const discountmax = 142350 //hámarksafsláttur ársins
 

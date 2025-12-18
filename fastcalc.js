@@ -1,19 +1,19 @@
 // lýsa yfir föstum (constants)
-const fastskattibud = 0.0031 
-const fastskattatvi = 0.0163
+const fastskattibud = 0.0028 
+const fastskattatvi = 0.0161
 
 const lodleigaibud = 0.005
 const lodleigaatv = 0.028
 
-const vatnibudfast = 11964 //fast gjald í krónum án fermetra
-const vatnatvfast = 23929 //fast gjald í krónum án fermetra
-const vatnibudferm = 179.4 //gjald á hvern fermetra
-const vatnatvferm = 179.4 //gjald á hvern fermetra
+const vatnibudfast = 12586 //fast gjald í krónum án fermetra
+const vatnatvfast = 25173 //fast gjald í krónum án fermetra
+const vatnibudferm = 188.7 //gjald á hvern fermetra
+const vatnatvferm = 188.7 //gjald á hvern fermetra
 
-const fraveita = 13613 //fast gjald í krónum án fermetra
-const fraveitafermgjald = 321.65 //gjald á hvern fermetra
+const fraveita = 17333 //fast gjald í krónum án fermetra
+const fraveitafermgjald = 409.53 //gjald á hvern fermetra
 
-const sorpgjald = 50268 //fast árlegt gjald
+const sorpgjald = 230000 //fast árlegt gjald fyrir utan fjölda og gerð íláta
 
 const discountmax = 142350 //hámarksafsláttur ársins
 
@@ -166,7 +166,7 @@ function calculate(){
 			result = numberWithCommas(result)
 			manud = numberWithCommas(manud)
         } 
-            result_div.innerHTML = "<h3><strong>Sundurliðun</strong></h3><p>Miðað við þær forsendur sem þú settir inn má áætla að fasteignagjöld fyrir árið séu eftirfarandi:</p><p><strong>Fasteignaskattur:</strong> "+fastskatt+" kr.</p><p><strong>Lóðarleiga:</strong> "+lodleig+" kr.</p><p><strong>Fráveitugjald:</strong> "+fraveit+" kr.</p><p><strong>Vatnsgjald:</strong> "+vatn+" kr.</p><p><strong>Sorphirðugjald:</strong> "+sorp+" kr.</p><h3><strong>Samtals: "+result+" kr.</strong> Frádreginn afsláttur vegna elli/örorku: "+discount+" kr.</h3><h4><strong>Mánaðarleg greiðsla febrúar-september: "+manud+" kr.</strong></h4><p><em>Fasteignagjöld ársins eru innheimt í 8 greiðslum frá febrúar til september hvert ár.</em></p>"
+            result_div.innerHTML = "<h3><strong>Sundurliðun</strong></h3><p>Miðað við þær forsendur sem þú settir inn má áætla að fasteignagjöld með fastagjaldi sorphirðu fyrir árið séu eftirfarandi:</p><p><strong>Fasteignaskattur:</strong> "+fastskatt+" kr.</p><p><strong>Lóðarleiga:</strong> "+lodleig+" kr.</p><p><strong>Fráveitugjald:</strong> "+fraveit+" kr.</p><p><strong>Vatnsgjald:</strong> "+vatn+" kr.</p><p><strong>Sorphirðugjald:</strong> "+sorp+" kr.</p><h3><strong>Samtals: "+result+" kr.</strong> Frádreginn afsláttur vegna elli/örorku: "+discount+" kr.</h3><h4><strong>Mánaðarleg greiðsla febrúar-september: "+manud+" kr.</strong></h4><p><em>Fasteignagjöld ársins eru innheimt í 8 greiðslum frá febrúar til september hvert ár.</em></p><p>Ofan á þetta gjald legst svo gjald skv. sorpílátasamsetningu eignarinnar sbr. <a href="https://www.akureyri.is/fjarmal-og-tolfraedi/gjaldskrar/sorphirda-gjaldskrar">gjaldskrá sorphirðu</a></p>"
          }
      }
 }

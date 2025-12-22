@@ -36,7 +36,7 @@ var vatn //endanlegt vatnsgjald
 var vatnferm //notað í millireikning - vatnsveitugjald sinnum fermetrar
 var fraveit //endanleg fráveitugjöld
 var fraferm //notað í millireikning - fráveitugjald sinnum fermetrar
-var sorp
+var sorp Number(sorpgjald) //Sama tala í öllum útreikningum
 
 function numberWithCommas(x) {
 	// Setur punkta í tölur svo auðvelt sé að aðgreina þúsund
@@ -71,7 +71,7 @@ function calculate(){
     fraferm = square * fraveitafermgjald
 
     result = 0
-    sorp = Number(sorpgjald)
+    //sorp = Number(sorpgjald)
 
 
     if(house === 0 || lawn === 0 || square === 0 || type === ""){
@@ -106,7 +106,7 @@ function calculate(){
 		lodleig = Math.round(lodleig)
 		fraveit = Math.round(fraveit)
 		vatn = Math.round(vatn)
-		sorp = Math.round(sorp)
+		//sorp = Math.round(sorp)
         result = Math.round(result)
 
         if(type==="atvi"){

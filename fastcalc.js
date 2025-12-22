@@ -36,7 +36,7 @@ var vatn //endanlegt vatnsgjald
 var vatnferm //notað í millireikning - vatnsveitugjald sinnum fermetrar
 var fraveit //endanleg fráveitugjöld
 var fraferm //notað í millireikning - fráveitugjald sinnum fermetrar
-var sorp Number(sorpgjald) //Sama tala í öllum útreikningum
+var sorp
 
 function numberWithCommas(x) {
 	// Setur punkta í tölur svo auðvelt sé að aðgreina þúsund
@@ -71,7 +71,7 @@ function calculate(){
     fraferm = square * fraveitafermgjald
 
     result = 0
-    //sorp = Number(sorpgjald)
+    sorp = Number(sorpgjald)
 
 
     if(house === 0 || lawn === 0 || square === 0 || type === ""){
@@ -106,15 +106,15 @@ function calculate(){
 		lodleig = Math.round(lodleig)
 		fraveit = Math.round(fraveit)
 		vatn = Math.round(vatn)
-		//sorp = Math.round(sorp)
+		sorp = Math.round(sorp)
         result = Math.round(result)
 
         if(type==="atvi"){
 			// Birtir niðurstöður fyrir atvinnuhúsnæði
             result = fastskatt+lodleig+vatn+fraveit
-            result2 = result + sorp
+           // result2 = result + sorp
 			manud = Math.ceil(result/8)
-            manud2 = Math.ceil(result2/8)
+            //manud2 = Math.ceil(result2/8)
 			fastskatt = numberWithCommas(fastskatt)
 			lodleig = numberWithCommas(lodleig)
 			fraveit = numberWithCommas(fraveit)
@@ -122,7 +122,7 @@ function calculate(){
             sorp = numberWithCommas(sorp)
 			result = numberWithCommas(result)
 			manud = numberWithCommas(manud)
-            manud2 = numberWithCommas(manud2)
+            //manud2 = numberWithCommas(manud2)
 			result_div.innerHTML = "<h3><strong>Sundurliðun</strong></h3><p>Miðað við þær forsendur sem þú settir inn má áætla að fasteignagjöld ársins séu eftirfarandi:</p><p><strong>Fasteignaskattur:</strong> "+fastskatt+" kr.</p><p><strong>Lóðarleiga:</strong> "+lodleig+" kr.</p><p><strong>Fráveitugjald:</strong> "+fraveit+" kr.</p><p><strong>Vatnsgjald:</strong> "+vatn+" kr.</p><h3><strong>Samtals: "+result+" kr.</strong></h3><h4><strong>Mánaðarleg greiðsla febrúar-september: "+manud+" kr.</strong></p><p>ATH: Ef um <strong>íbúð í atvinnurekstri</strong> er að ræða bætist við <strong>fastagjald sorphirðu: "+sorp+" kr.</strong> og ílátagjöld skv. sorpílátasamsetningu eignarinnar sbr. gjaldskrá sorhirðu hér fyrir neðan</h4><p><em>Fasteignagjöld ársins eru innheimt í 8 greiðslum frá febrúar til september hvert ár.</em></p>"    
         }else{
 			// Birtir niðurstöður fyrir íbúðarhúsnæði
